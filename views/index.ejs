@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+      <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header class="navbar navbar-dark bg-dark">
+    <a href="" class="navbar-brand">
+      <img src="/images/areas.png" width="30" heigth="30" alt="">
+      Tableau de bord
+    </a>
+    </header>
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">MIAC Solaire</h1>
+          <p class="lead">Présentation des différentes  relatives à la cellule solaire et</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success" role="alert">
+                    Connection au MIAC OK.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tension U(V)</th>
+                <th scope="col">Courant panneau I (A)</th>
+                <th scope="col">Courant batterie I (A)</th>
+                <th scope="col">Courant éolienne I (A)</th>
+                <th scope="col">Courant total I (A)</th>
+                <th scope="col">Courant irradiance w/m^2</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <% for (var variable of tabVar1) { %>
+                <td> <%= variable %>
+                </td>
+                <% } %>
+            </tbody>
+        </table>
+
+    </div>
+  </body>
+</html>

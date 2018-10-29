@@ -6,6 +6,7 @@ module.exports = class Solaire extends Recuperation {
   static retrieve() {
     const url = 'http://192.168.1.2';
     const variables = new Array(7);
+    variables.fill('Non mesurée', 0, 6);
     console.log('Lancement analyse miac cellule sollaire');
 
     rp(url)
@@ -18,7 +19,7 @@ module.exports = class Solaire extends Recuperation {
         variables[4] = $('#affichage_courant_total', html).text();
         variables[5] = $('#affichage_courant_irradiance', html).text();
         variables[6] = $('#affichage_temperature', html).text();
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 7; i + 1) {
           variables[i] = parseInt(variables[i], 10);
         }
         variables[0] = (22 * variables[0]) / 255;
@@ -29,9 +30,8 @@ module.exports = class Solaire extends Recuperation {
         variables[5] = (12.8 * variables[5]) / 255;
         variables[6] = (12.8 * variables[6]) / 255;
       })
+// eslint-disable-next-line no-unused-vars
       .catch((err) => {
-        console.log(err);
-        variables.fill('Non mesurée', 0, 6);
       });
     return variables;
   }

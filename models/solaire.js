@@ -8,10 +8,9 @@ module.exports = class Solaire extends Recuperation {
     const variables = new Array(7);
     variables.fill('Non mesurée', 0, 6);
     console.log('Lancement analyse miac cellule sollaire');
-
+    /*
     rp(url)
       .then((html) => {
-        console.log('Premier test');
         variables[0] = $('#affichage_tension_systeme', html).text();
         variables[1] = $('#affichage_courant_panneau', html).text();
         variables[2] = $('#affichage_courant_baterrie', html).text();
@@ -32,7 +31,7 @@ module.exports = class Solaire extends Recuperation {
       })
 // eslint-disable-next-line no-unused-vars
       .catch((err) => {
-      });
+      }); */
     return variables;
   }
 };

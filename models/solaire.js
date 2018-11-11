@@ -6,7 +6,7 @@ module.exports = class Solaire extends Recuperation {
   static retrieve() {
     const url = 'http://192.168.1.2';
     const variables = new Array(7);
-    variables.fill('Non mesurée', 0, 6);
+    variables.fill('Non mesurée', 0, 7);
     console.log('Lancement analyse miac cellule sollaire');
     /*
     rp(url)

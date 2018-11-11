@@ -1,163 +1,259 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <meta charset="UTF-8">
-      <meta name="author" content="Julien Jonathan">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Julien Jonathan">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body id="page-top">
+<!--  Navbar top -->
+<nav class="navbar navbar-expand static-top navbar-dark bg-dark">
+    <a href="/" class="navbar-brand">
+        <img src="/images/areas.png" width="30" heigth="30" alt="">
+        Tableau de bord
+    </a>
+</nav>
+<div id="wrapper">
+    <!-- Sidebar Navbar -->
+    <ul class="sidebar navbar-nav">
+        <li class="nav-item">
+            <a href="/" class="nav-link">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dasboard</span>
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="far fa-caret-square-down"></i>
+                <span>Equipements</span></a>
+            <div class="dropdown-menu" aria-labelledby="dropdown06">
+                <a class="dropdown-item" href="/solaire">Miac Solaire</a>
+                <a class="dropdown-item" href="/productionn1">Miac Production 1</a>
+                <a class="dropdown-item" href="/productionn2">Miac Production 2</a>
+                <a class="dropdown-item" href="/energie">Compteur d'énergie</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="/" class="nav-link">
+                <i class="fas fa-chart-bar"></i>
+                <span>Analyse</span>
+            </a>
+        </li>
+        &
+        <li class="nav-item">
+            <a href="/" class="nav-link">
+                <i class="fas fa-database"></i>
+                <span>Historique</span>
+            </a>
+        </li>
+    </ul>
+    <!-- Content -->
+    <div id="content-wrapper">
+        <div class="container-fluid">
 
-      <title><%= title %></title>
-
-      <link rel="stylesheet" href="/stylesheets/bootstrap.css">
-
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-      <link rel="stylesheet" href="/stylesheets/dataTables.bootstrap4.css">
-
-      <link rel="stylesheet" href="/stylesheets/style.css">
-      <style>
-          .content-wrapper{
-              padding-top: 2rem;
-          }
-      </style>
-  </head>
-  <body id="page-top">
-   <!--  Navbar top -->
-    <nav class="navbar navbar-expand static-top navbar-dark bg-dark">
-        <a href="/" class="navbar-brand">
-          <img src="/images/areas.png" width="30" heigth="30" alt="">
-          Tableau de bord
-        </a>
-    </nav>
-   <div id="wrapper">
-       <!-- Sidebar Navbar -->
-       <ul class="sidebar navbar-nav">
-           <li class="nav-item">
-               <a href="/" class="nav-link">
-                   <i class="fas fa-fw fa-tachometer-alt"></i>
-                   <span>Dasboard</span>
-               </a>
-           </li>
-           <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <i class="far fa-caret-square-down"></i>
-               <span>Equipements</span></a>
-               <div class="dropdown-menu" aria-labelledby="dropdown06">
-                   <a class="dropdown-item" href="#">Miac Solaire</a>
-                   <a class="dropdown-item" href="#">Miac Production</a>
-                   <a class="dropdown-item" href="#">Compteur d'énergie</a>
-               </div>
-           </li>
-           <li class="nav-item">
-               <a href="/" class="nav-link">
-                   <i class="fas fa-chart-bar"></i>
-                   <span>Analyse</span>
-               </a>
-           </li>&
-           <li class="nav-item">
-               <a href="/" class="nav-link">
-                   <i class="fas fa-database"></i>
-                   <span>Historique</span>
-               </a>
-           </li>
-       </ul>
-       <!-- Content -->
-       <div class="content-wrapper">
-            <div class="container-fluid">
-              <div class="jumbotron jumbotron-fluid">
+            <!-- Dashboard -->
+            <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                  <h1 class="display-4">Dashboard</h1>
-                  <p class="lead">Présentation du dashboard</p>
-                </div>
-              </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col">
-                        <div class="alert alert-success" role="alert">
-                            <h3 class="alert-heading">Connecté</h3>
-                            <p>Connection au MIAC OK.</p>
-                            <a href="#">Détail</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="alert alert-success" role="alert">
-                            <h3 class="alert-heading">Connecté</h3>
-                            <p>Connection au MIAC OK.</p>
-                            <a href="#">Détail</a>
-
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="alert alert-success" role="alert">
-                            <h3 class="alert-heading">Connecté</h3>
-                            <p>Connection au MIAC OK.</p>
-                            <a href="#">Détail</a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="alert alert-success" role="alert">
-                            <h3 class="alert-heading">Connecté</h3>
-                            <p>Connection au MIAC OK.</p>
-                            <a href="#">Détail</a>
-                        </div>
-                    </div>
+                    <h1 class="display-4">Dashboard</h1>
+                    <p class="lead">Présentation du dashboard</p>
                 </div>
             </div>
-            <div class="container-fluid">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Tension U(V)</th>
-                        <th scope="col">Courant panneau I (A)</th>
-                        <th scope="col">Courant batterie I (A)</th>
-                        <th scope="col">Courant éolienne I (A)</th>
-                        <th scope="col">Courant total I (A)</th>
-                        <th scope="col">Courant irradiance w/m^2</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <% for (var variable of tabVar1) { %>
-                        <td> <%= variable %>
-                        </td>
-                        <% } %>
-                    </tbody>
-                </table>
+            <!-- Miac -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active font-weight-bold" aria-current="page">Miac</li>
+                </ol>
+            </nav>
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="card text-white bg-success o-hidden h-100">
+                        <div class="card-body">
+                            <div class="mr-5">
+                                <h4>Connecté</h4>
+                            </div>
+                            <p>Connection au MIAC OK.</p>
+                            <p class="text-center font-weight-bold">Cellule Solaire</p>
+                            <div class="card-body-icon">
+                                <i class="fas fa-solar-panel"></i>
+                            </div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/solaire">
+                            <span class="float-left ">Détail</span>
+                            <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-success o-hidden h-100">
+                        <div class="card-body">
+                            <div class="mr-5">
+                                <h4>Connecté</h4>
+                            </div>
+                            <p>Connection au MIAC OK.</p>
+                            <p class="text-center font-weight-bold">Cellule de production 1</p>
+                            <div class="card-body-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/productionn1">
+                            <span class="float-left">Détail</span>
+                            <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-success o-hidden h-100">
+                        <div class="card-body">
+                            <div class="mr-5">
+                                <h4>Connecté</h4>
+                            </div>
+                            <p>Connection au MIAC OK.</p>
+                            <p class="text-center font-weight-bold">Cellule de production 2</p>
+                            <div class="card-body-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/productionn2">
+                            <span class="float-left">Détail</span>
+                            <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-success o-hidden h-100">
+                        <div class="card-body">
+                            <div class="mr-5">
+                                <h4>Connecté</h4>
+                            </div>
+                            <p>Connection au MIAC OK.</p>
+                            <p class="text-center font-weight-bold">Cellule Eolienne</p>
+                            <div class="card-body-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/eolienne">
+                            <span class="float-left">Détail</span>
+                            <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                        </span>
+                        </a>
+                    </div>
+                </div>
             </div>
-           <!-- Footer -->
-           <footer class="sticky-footer">
-               <div class="container my-auto">
-                   <div class="copyright text-center my-auto">
-                       <span>Copyright © Supervision Ensiame Option Energie 2018</span>
-                   </div>
-               </div>
-           </footer>
-
-       </div>
+            <!-- Compteurs d'énergie -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active font-weight-bold" aria-current="page">Compteurs d'énergie</li>
+                </ol>
+            </nav>
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="card text-white bg-danger o-hidden h-100">
+                        <div class="card-body">
+                            <div class="mr-5">
+                                <h4>Déconnecté</h4>
+                            </div>
+                            <p>Connection au compteur 1  OK.</p>
+                            <p class="text-center font-weight-bold">Cellule de consommation n°1</p>
+                            <div class="card-body-icon">
+                                <i class="fas fa-solar-panel"></i>
+                            </div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/consommateurn1">
+                            <span class="float-left ">Détail</span>
+                            <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-danger o-hidden h-100">
+                        <div class="card-body">
+                            <div class="mr-5">
+                                <h4>Déconnecté</h4>
+                            </div>
+                            <p>Connection au compteur 2  OK.</p>
+                            <p class="text-center font-weight-bold">Cellule de consommation n°2</p>
+                            <div class="card-body-icon">
+                                <i class="fas fa-solar-panel"></i>
+                            </div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/consommateurn2">
+                            <span class="float-left ">Détail</span>
+                            <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-white bg-danger o-hidden h-100">
+                        <div class="card-body">
+                            <div class="mr-5">
+                                <h4>Déconnecté</h4>
+                            </div>
+                            <p>Connection au compteur 3  OK.</p>
+                            <p class="text-center font-weight-bold">Cellule de consommation n°3</p>
+                            <div class="card-body-icon">
+                                <i class="fas fa-solar-panel"></i>
+                            </div>
+                        </div>
+                        <a class="card-footer text-white clearfix small z-1" href="/consommateurn3">
+                            <span class="float-left ">Détail</span>
+                            <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Test card -->
+            <div class="card mb-3">
+                <h5 class="card-header">Featured</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
         </div>
-   </div>
-   <!-- Scroll to Top Button-->
-   <a class="scroll-to-top rounded" href="#page-top">
-       <i class="fas fa-angle-up"></i>
-   </a>
-  </body>
-  <!-- Bootstrap core JavaScript-->
-  <script src="/jquery/jquery.js"></script>
-  <script src="/bootstrap/js/bootstrap.bundle.js"></script>
+        <!-- Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright © Supervision Ensiame Option Energie 2018</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
 
-  <!-- Core plugin JavaScript-->
-  <script src="/jquery-easing/jquery.easing.js"></script>
-
-  <!-- Page level plugin JavaScript-->
-  <script src="/chart.js/Chart.js"></script>
-  <script src="/datatables/jquery.dataTables.js"></script>
-  <script src="/datatables/dataTables.bootstrap4.js"></script>
-
-  <!-- Scripts for all pages-->
-
-
-  <!-- Scripts for this page-->
-
-  <script src="/javascripts/script.js"></script>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+</body>
+<!-- Bootstrap core JavaScript-->
+<script src="/jquery/jquery.js"></script>
+<script src="/bootstrap/js/bootstrap.bundle.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="/jquery-easing/jquery.easing.js"></script>
+<!-- Page level plugin JavaScript-->
+<script src="/chart.js/Chart.js"></script>
+<script src="/datatables/jquery.dataTables.js"></script>
+<script src="/datatables/dataTables.bootstrap4.js"></script>
+<!-- Scripts for all pages-->
+<!-- Scripts for this page-->
+<script src="/javascripts/script.js"></script>
 </html>

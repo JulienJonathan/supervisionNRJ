@@ -8,6 +8,8 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res) => {
+    let etatConnection = false
+    reques
   res.render('index', { title: 'Dashboard' });
 });
 

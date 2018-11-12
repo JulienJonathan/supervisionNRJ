@@ -70,7 +70,7 @@
             </nav>
             <div class="row mb-3">
                 <div class="col">
-                    <div class="card text-white bg-success o-hidden h-100">
+                    <div class="card text-white bg-success o-hidden h-100" id="miacSolaire">
                         <div class="card-body">
                             <div class="mr-5">
                                 <h4>Connecté</h4>
@@ -166,7 +166,7 @@
                             <p>Connection au compteur 1  OK.</p>
                             <p class="text-center font-weight-bold">Cellule de consommation n°1</p>
                             <div class="card-body-icon">
-                                <i class="fas fa-solar-panel"></i>
+                                <i class="fas fa-fire"></i>
                             </div>
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="/consommateurn1">
@@ -186,7 +186,7 @@
                             <p>Connection au compteur 2  OK.</p>
                             <p class="text-center font-weight-bold">Cellule de consommation n°2</p>
                             <div class="card-body-icon">
-                                <i class="fas fa-solar-panel"></i>
+                                <i class="fas fa-fire"></i>
                             </div>
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="/consommateurn2">
@@ -206,7 +206,7 @@
                             <p>Connection au compteur 3  OK.</p>
                             <p class="text-center font-weight-bold">Cellule de consommation n°3</p>
                             <div class="card-body-icon">
-                                <i class="fas fa-solar-panel"></i>
+                                <i class="fas fa-fire"></i>
                             </div>
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="/consommateurn3">
@@ -220,11 +220,12 @@
             </div>
             <!-- Test card -->
             <div class="card mb-3">
-                <h5 class="card-header">Featured</h5>
+                <h5 class="card-header">Bouton de test </h5>
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Titre</h5>
+                    <p class="card-text">Texte</p>
+                    <a class="btn btn-primary" id="btnTest">Test 1</a>
+                    <a class="btn btn-secondary" id="btnTest2">Test 2</a>
                 </div>
             </div>
         </div>
@@ -254,6 +255,15 @@
 <script src="/datatables/jquery.dataTables.js"></script>
 <script src="/datatables/dataTables.bootstrap4.js"></script>
 <!-- Scripts for all pages-->
+<script>
+  $("#btnTest").click(function (){
+      $("#miacSolaire").toggleClass('bg-success bg-danger');
+  })
+    $("#btnTest2").click(function () {
+        $("#miacSolaire").toggleClass('bg-danger bg-success');
+
+    })
+</script>
 <!-- Scripts for this page-->
-<script src="/javascripts/script.js"></script>
+<!--<script src="/javascripts/script.js"></script>-->
 </html>

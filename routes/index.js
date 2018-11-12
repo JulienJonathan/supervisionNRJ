@@ -24,4 +24,12 @@ router.get('/productionn2', (req, res) => {
     const tabVar1 = solaire.retrieve();
   res.render('productionn2', { title: 'Production 1', tabVar1: tabVar1 });
 });
+
+router.get('/analyse', (req, res) => {
+    res.render('analyse', { title: 'Analyse' });
+});
+
+router.get('/historique',(req,res)=>{
+    res.render('historique',{ title: 'Historique'})
+})
 module.exports = router;
